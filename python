@@ -1,0 +1,15 @@
+#!/bin/sh
+wget http://python-distribute.org/distribute_setup.py
+sudo python distribute_setup.py
+rm -f distribute*
+sudo easy_install pip
+sudo pip install virtualenv pep8
+sudo apt-get install pyflakes
+
+bashrc="
+export PIP_REQUIRE_VIRTUALENV=true
+export VIRTUALENV_USE_DISTRIBUTE=true
+"
+
+printf "$bashrc" >> ~/.bashrc
+. ~/.bashrc

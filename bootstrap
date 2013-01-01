@@ -1,0 +1,18 @@
+#! /bin/sh
+
+src="
+deb http://kambing.ui.ac.id/debian/ wheezy main non-free contrib
+deb http://kambing.ui.ac.id/debian-security wheezy/updates main contrib non-free
+deb http://kambing.ui.ac.id/debian experimental main
+deb http://ppa.launchpad.net/linrunner/tlp/ubuntu lucid main
+"
+
+sudo sh -c "printf '$src' > /etc/apt/sources.list"
+sudo apt-get update
+sudo apt-get purge brasero xfce4-goodies xfburn gimp libreoffice* xsane
+sudo apt-get autoremove
+
+sudo apt-get install -t experimental iceweasel
+sudo apt-get install emacs mg git
+
+git clone https://github.com/kusut/.emacs.d.git ~/.emacs.d
