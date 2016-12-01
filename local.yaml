@@ -33,9 +33,6 @@
         - tlp
         - flashplugin-nonfree
 
-    - name: Installing browser
-      apt: pkg=iceweasel state=latest default_release=experimental
-
     - name: Removing packages
       apt: pkg={{item}} state=absent purge=yes
       with_items:
