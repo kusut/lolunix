@@ -7,6 +7,9 @@
     - name: Keyboard
       copy: src=files/keyboard dest=/etc/default/keyboard backup=yes
 
+    - name: gitconfig
+      copy: src=files/gitconfig dest=~/.gitconfig
+
     - name: xfce settings
       command: ./files/xfce
 
