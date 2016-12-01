@@ -9,14 +9,8 @@
     - name: Installing apt-transport-https
       apt: pkg=apt-transport-https state=present
 
-    - name: add hhvm key
-      apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=0x5a16e7281be7a449 state=present
-
     - name: varnish key
       apt_key: url=https://repo.varnish-cache.org/GPG-key.txt
-
-    - name: add hhvm repo
-      apt_repository: repo='deb http://dl.hhvm.com/debian jessie main' state=present
 
     - name: add varnish repo
       apt_repository: repo='deb https://repo.varnish-cache.org/debian/ jessie varnish-4.1' state=present
@@ -24,7 +18,6 @@
     - name: Installing packages
       apt: pkg={{item}} update_cache=yes state=latest
       with_items:
-        - hhvm
         - varnish
         - nginx
         - postgresql
