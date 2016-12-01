@@ -1,6 +1,6 @@
 #! /bin/sh
 
-grub="options i915 i915_enable_fbc=1 i915_enable_rc6=1 lvds_downclock=1\n"
+grub="options i915 i915_enable_rc6=1\n"
 fan="(0, 0, 55)
 (1, 55, 61)
 (2, 57, 65)
