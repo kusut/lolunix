@@ -1,0 +1,17 @@
+export TZ="Asia/Jakarta"
+export EDITOR="mg"
+
+if [ "$BASH" ]; then
+    . ~/.bashrc
+fi
+uptime
+
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$HOME/.local/bin:$PATH"
+fi
+
+if [ -d "/virtual/npm-global/bin" ] ; then
+    PATH="/virtual/npm-global/bin:$PATH"
+fi
+
+export VAGRANT_HOME=/virtual/vagrant.d/
