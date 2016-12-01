@@ -1,17 +1,22 @@
 #! /bin/sh
 
 src="
-deb http://kambing.ui.ac.id/debian/ wheezy main non-free contrib
-deb http://kambing.ui.ac.id/debian-security wheezy/updates main contrib non-free
-deb http://kambing.ui.ac.id/debian experimental main
+deb http://kambing.ui.ac.id/debian/ stable main non-free contrib
+deb http://kambing.ui.ac.id/debian/ stable-updates main non-free contrib
+deb http://kambing.ui.ac.id/debian-security stable/updates main contrib non-free
+
+deb http://mozilla.debian.net/ wheezy-backports iceweasel-aurora
+deb http://emacs.naquadah.org/ stable/
+deb http://repo.maxindo.net.id/dotdeb/ stable all
 "
 
 sudo sh -c "printf '$src' > /etc/apt/sources.list"
+wget -q -O - http://emacs.naquadah.org/key.gpg | sudo apt-key add -
+wget -q -0 - http://www.dotdeb.org/dotdeb.gpg | sudo apt-key add -
 sudo apt-get update
-sudo apt-get purge brasero xfce4-goodies xfburn gimp libreoffice* xsane exfalso quodlibet*
-sudo apt-get autoremove
+#sudo apt-get autoremove
 
-sudo apt-get install -t experimental iceweasel
-sudo apt-get install emacs mg
+sudo apt-get install -t wheezy-backports iceweasel
+sudo apt-get install emacs-snapshot mg nginx redis-server git transmission
 
-git clone https://github.com/kusut/.emacs.d.git ~/.emacs.d
+#git clone https://github.com/kusut/.emacs.d.git ~/.emacs.d

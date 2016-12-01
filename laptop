@@ -17,9 +17,7 @@ src="deb http://ppa.launchpad.net/linrunner/tlp/ubuntu lucid main\n"
 sudo sh -c "printf '$src' >> /etc/apt/sources.list"
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 02D65EFF
 sudo apt-get update
-sudo apt-get install tlp tlp-rdw smartmontools ethtool thinkfan
-#sudo apt-get install tp-smapi-dkms acpi-call-tools
-
+sudo apt-get install thinkfan tlp
 sudo sh -c "printf '$fanconf' > /etc/modprobe.d/thinkpad_acpi.conf"
 sudo sh -c "printf '$grub' > /etc/modprobe.d/options.conf"
 sudo mv /etc/thinkfan.conf /etc/thinkfan.conf.default
