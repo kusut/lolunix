@@ -1,0 +1,3 @@
+sudo apt-get install haskell-platform
+cabal update && cabal install cabal
+~/.cabal/bin/cabal install stylish-haskell structured-haskell-mode ghc-mod cabal-uninstall hlint
