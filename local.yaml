@@ -1,10 +1,10 @@
 ---
-- hosts: 127.0.0.1
+- hosts: localhost
   connection: local
-  sudo: yes
+  become: yes
+  become_method: sudo
 
   roles:
     - kusut
     - nodejs
     - stack
-    - hhvm
