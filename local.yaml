@@ -1,0 +1,49 @@
+---
+- hosts: 127.0.0.1
+  connection: local
+  sudo: yes
+
+  tasks:
+    - name: Keyboard
+      copy: src=files/keyboard dest=/etc/default/keyboard backup=yes
+
+    - name: xfce settings
+      command: ./files/xfce
+
+    - name: sid source list
+      copy: src=files/sources.list/unstable dest=/etc/apt/sources.list	
+
+    - name: Installing packages
+      apt: pkg={{item}} state=latest
+      with_items:
+        - emacs
+        - mg
+        - git
+        - vagrant
+        - ansible
+        - virtualbox
+        - transmission
+        - apt-listbugs
+        - gvfs-backends
+        - mpv
+        - pavucontrol
+        - tlp
+        - flashplugin-nonfree
+
+    - name: Installing browser
+      apt: pkg=iceweasel state=latest default_release=experimental
+
+    - name: Removing packages
+      apt: pkg={{item}} state=absent purge=yes
+      with_items:
+        - vlc
+        - libreoffice-math
+        - libreoffice-evolution
+        - libreoffice-draw
+
+    - name: Autoremoving
+      command: sudo apt-get autoremove -y
+
+    - name: emacs
+      sudo: no
+      git: repo=git@github.com:kusut/.emacs.d.git dest=~/.emacs.d accept_hostkey=yes key_file=~/.ssh/id_rsa

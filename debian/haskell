@@ -1,5 +1,0 @@
-sudo apt-get install haskell-platform libncurses5-dev
-cabal update && cabal install cabal cabal-install
-echo 'export PATH=~/.cabal/bin:$PATH'| tee -a ~/.bashrc
-. ~/.bashrc
-cabal install stylish-haskell structured-haskell-mode ghc-mod ghci-ng cabal-uninstall hlint

@@ -1,18 +1,3 @@
-#!/bin/sh
-
-nocaps="[Desktop Entry]
-Encoding=UTF-8
-Version=0.9.4
-Type=Application
-Name=nocaps
-Comment=nocaps
-Exec=setxkbmap -option "ctrl:nocaps"
-StartupNotify=false
-Terminal=false
-Hidden=false
-"
-
-term="
 [Configuration]
 TitleInitial=
 ScrollingBar=TERMINAL_SCROLLBAR_NONE
@@ -54,18 +39,3 @@ ColorPalette16=#ffffffffffff
 ColorForeground=#dcdcdcdccccc
 ColorBackground=#3f3f3f3f3f3f
 ColorCursor=
-"
-
-
-printf "$nocaps" > ~/.config/autostart/nocaps.desktop
-mkdir -p ~/.config/Terminal
-printf "$term" > ~/.config/Terminal/terminalrc
-
-xfconf-query -c xfce4-panel -p /panels/panel-0/disable-struts -t bool -n -s true
-xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
-xfconf-query -c xsettings -p /Xft/Antialias -s 1
-xfconf-query -c xsettings -p /Xft/Hinting -s 1
-xfconf-query -c xsettings -p /Xft/HintStyle -s hintslight
-xfconf-query -c xsettings -p /Xft/RGBA -s rgb
-xfconf-query -c xsettings -p /Xft/Lcdfilter -n -t string -s lcddefault
-xfconf-query -c xfce4-desktop -p /desktop-icons/style -s 0
