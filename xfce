@@ -58,6 +58,7 @@ ColorCursor=
 
 
 printf "$nocaps" > ~/.config/autostart/nocaps.desktop
+mkdir -p ~/.config/Terminal
 printf "$term" > ~/.config/Terminal/terminalrc
 
 xfconf-query -c xfce4-panel -p /panels/panel-0/disable-struts -t bool -n -s true
