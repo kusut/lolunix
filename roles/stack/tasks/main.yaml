@@ -1,0 +1,11 @@
+- name: add fpcomplete key
+  apt_key: url=https://s3.amazonaws.com/download.fpcomplete.com/debian/fpco.key state=present
+  tags: stack
+
+- name: add stack repo
+  apt_repository: repo='deb http://download.fpcomplete.com/debian/jessie stable main' state=present
+  tags: stack
+
+- name: Installing stack
+  apt: pkg=stack update_cache=yes state=latest
+  tags: stack

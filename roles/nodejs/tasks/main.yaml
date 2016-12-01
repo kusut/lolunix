@@ -6,6 +6,6 @@
   apt_repository: repo='deb http://deb.nodesource.com/node_5.x jessie main' state=present
   tags: nodejs
 
-- name: Installing packages
+- name: Installing nodejs
   apt: pkg=nodejs update_cache=yes state=latest
   tags: nodejs
