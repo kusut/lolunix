@@ -1,5 +1,5 @@
 #!/bin/sh
-wget https://bitbucket.org/pypa/setuptools/raw/0.8/ez_setup.py -O - | sudo python
+wget https://bitbucket.org/pypa/setuptools/raw/bootstrap/ez_setup.py -O - | sudo python
 sudo easy_install pip
 sudo pip install virtualenv pep8 pyflakes
 
