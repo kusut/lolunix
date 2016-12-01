@@ -1,0 +1,43 @@
+- name: Keyboard
+  copy: src=keyboard dest=/etc/default/keyboard backup=yes
+
+- name: gitconfig
+  copy: src=gitconfig dest=~/.gitconfig
+
+- name: xfce settings
+  script: xfce
+
+- name: sid source list
+  copy: src=sources.list/unstable dest=/etc/apt/sources.list
+
+- name: Installing packages
+  apt: pkg={{item}} state=latest
+  with_items:
+  - emacs
+  - mg
+  - git
+  - vagrant
+  - ansible
+  - virtualbox
+  - transmission
+  - apt-listbugs
+  - gvfs-backends
+  - mpv
+  - pavucontrol
+  - tlp
+  - flashplugin-nonfree
+
+- name: Removing packages
+  apt: pkg={{item}} state=absent purge=yes
+  with_items:
+  - vlc
+  - libreoffice-math
+  - libreoffice-evolution
+  - libreoffice-draw
+
+- name: Autoremoving
+  command: sudo apt-get autoremove -y
+
+- name: emacs
+  sudo: no
+  git: repo=git@github.com:kusut/.emacs.d.git dest=~/.emacs.d accept_hostkey=yes key_file=~/.ssh/id_rsa
