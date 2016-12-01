@@ -15,9 +15,6 @@
     - name: add hhvm key
       apt_key: keyserver=hkp://keyserver.ubuntu.com:80 id=0x5a16e7281be7a449 state=present
 
-    - name: add nodesource key
-      apt_key: url=https://deb.nodesource.com/gpgkey/nodesource.gpg.key state=present
-
     - name: varnish key
       apt_key: url=https://repo.varnish-cache.org/GPG-key.txt
 
@@ -26,9 +23,6 @@
 
     - name: add hhvm repo
       apt_repository: repo='deb http://dl.hhvm.com/debian jessie main' state=present
-
-    - name: add node repo
-      apt_repository: repo='deb http://deb.nodesource.com/node_4.x jessie main' state=present
 
     - name: add varnish repo
       apt_repository: repo='deb https://repo.varnish-cache.org/debian/ jessie varnish-4.1' state=present
@@ -44,4 +38,3 @@
         - mg
         - git
         - stack
-        - nodejs
