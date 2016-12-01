@@ -1,0 +1,30 @@
+#! /bin/sh
+
+grub="options i915 i915_enable_fbc=1 i915_enable_rc6=1 lvds_downclock=1\n"
+fan="(0, 0, 55)
+(1, 55, 61)
+(2, 57, 65)
+(3, 61, 69)
+(4, 69, 81)
+(5, 79, 86)
+(7, 84, 32767)
+"
+
+fanconf="options thinkpad_acpi fan_control=1\n"
+
+src="deb http://ppa.launchpad.net/linrunner/tlp/ubuntu lucid main\n"
+
+sudo sh -c "printf '$src' >> /etc/apt/sources.list"
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 02D65EFF
+sudo apt-get update
+sudo apt-get install tlp tlp-rdw smartmontools ethtool thinkfan
+#sudo apt-get install tp-smapi-dkms acpi-call-tools
+
+sudo sh -c "printf '$fanconf' > /etc/modprobe.d/thinkpad_acpi.conf"
+sudo sh -c "printf '$grub' > /etc/modprobe.d/options.conf"
+sudo mv /etc/thinkfan.conf /etc/thinkfan.conf.default
+sudo sh -c "printf '$fan' > /etc/thinkfan.conf"
+
+
+sudo tlp start
+sudo update-initramfs -u -k all
