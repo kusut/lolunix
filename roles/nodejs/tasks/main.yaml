@@ -3,7 +3,7 @@
   tags: nodejs
 
 - name: add node repo
-  apt_repository: repo='deb http://deb.nodesource.com/node_5.x jessie main' state=present
+  apt_repository: repo='deb http://deb.nodesource.com/node_6.x jessie main' state=present
   tags: nodejs
 
 - name: Installing nodejs
