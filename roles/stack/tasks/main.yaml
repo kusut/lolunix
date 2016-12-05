@@ -7,5 +7,5 @@
   tags: stack
 
 - name: Installing stack
-  apt: pkg=stack update_cache=yes state=latest
+  apt: pkg=stack state=latest
   tags: stack

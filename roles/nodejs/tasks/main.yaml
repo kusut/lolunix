@@ -7,5 +7,5 @@
   tags: nodejs
 
 - name: Installing nodejs
-  apt: pkg=nodejs update_cache=yes state=latest
+  apt: pkg=nodejs state=latest
   tags: nodejs

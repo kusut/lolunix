@@ -9,5 +9,5 @@
   tags: hhvm
 
 - name: Installing packages
-  apt: pkg=hhvm update_cache=yes state=latest
+  apt: pkg=hhvm state=latest
   tags: hhvm
