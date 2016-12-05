@@ -1,0 +1,15 @@
+- name: Adding postgres key
+  apt_key: url=https://www.postgresql.org/media/keys/ACCC4CF8.asc state=present
+  tags: postgres
+
+- name: Adding postgres repo
+  apt_repository: repo='deb http://apt.postgresql.org/pub/repos/apt/ jessie-pgdg main' state=present
+  tags: postgres
+
+- name: Installing postgres packages
+  apt: pkg={{item}} state=latest
+  with_items:
+    - postgresql
+    - libpq-dev
+    - python-psycopg2
+  tags: postgres
