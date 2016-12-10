@@ -1,0 +1,11 @@
+---
+- hosts: default
+  become: yes
+  become_method: sudo
+
+  roles:
+    - postgres
+    - stack
+    - nodejs
+    - postgres
+    - postgres-initproject
