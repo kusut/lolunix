@@ -1,14 +1,14 @@
 - name: Creating db
   become_user: postgres
   postgresql_db:
-    name: {{ db_name }}
+    name: "{{ db_name }}"
   tags: postgres-init
 
 - name: Creating db user
   become_user: postgres
   postgresql_user:
-    db: {{ db_name }}
-    name: {{ db_user }}
-    password: {{ db_user_password }}
+    db: "{{ db_name }}"
+    name: "{{ db_user }}"
+    password: "{{ db_user_password }}"
     role_attr_flags: SUPERUSER
   tags: postgres-init
