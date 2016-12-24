@@ -28,9 +28,6 @@
   - libreoffice-evolution
   - libreoffice-draw
 
-- name: Autoremoving
-  command: sudo apt-get autoremove -y
-
 - name: emacs
   sudo: no
   git: repo=git@github.com:kusut/.emacs.d.git dest=~/.emacs.d accept_hostkey=yes key_file=~/.ssh/id_rsa
