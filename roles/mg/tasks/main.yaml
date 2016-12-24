@@ -1,0 +1,2 @@
+- name: Installing mg
+  apt: pkg=mg state=latest

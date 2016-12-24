@@ -5,6 +5,8 @@
   become_method: sudo
 
   roles:
+    - ctrlnocaps
+    - mg
     - kusut
     - nodejs
     - stack
