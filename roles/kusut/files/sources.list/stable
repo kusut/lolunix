@@ -1,3 +1,0 @@
-deb http://kambing.ui.ac.id/debian/ jessie main non-free contrib
-deb http://kambing.ui.ac.id/debian/ jessie-updates main contrib non-free
-deb http://security.debian.org/ jessie/updates main contrib non-free

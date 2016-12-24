@@ -4,9 +4,6 @@
 - name: xfce settings
   script: xfce
 
-- name: sid source list
-  copy: src=sources.list/unstable dest=/etc/apt/sources.list
-
 - name: Installing packages
   apt: pkg={{item}} state=latest
   with_items:
