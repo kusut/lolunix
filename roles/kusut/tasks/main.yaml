@@ -1,9 +1,6 @@
 - name: gitconfig
   copy: src=gitconfig dest=~/.gitconfig
 
-- name: xfce settings
-  script: xfce
-
 - name: Installing packages
   apt: pkg={{item}} state=latest
   with_items:

@@ -1,0 +1,4 @@
+- name: Running xfce query
+  become: no
+  script: query
+  tags: xfce
