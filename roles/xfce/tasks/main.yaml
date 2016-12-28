@@ -1,3 +1,12 @@
+- name: Linking panel config
+  file:
+    src: xfce4-panel.xml
+    dest: '/home/tino/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml'
+    state: link
+    force: yes
+  become: no
+  tags: xfce
+
 - name: Running xfce query
   become: no
   script: query

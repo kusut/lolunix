@@ -1,5 +1,4 @@
 #!/bin/sh
-xfconf-query -c xfce4-panel -p /panels/panel-0/disable-struts -t bool -n -s true
 xfconf-query -c xsettings -p /Gtk/KeyThemeName -s Emacs
 xfconf-query -c xsettings -p /Xft/Antialias -s 1
 xfconf-query -c xsettings -p /Xft/Hinting -s 1
