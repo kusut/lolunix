@@ -1,0 +1,10 @@
+- name: Installing packages
+  apt: pkg=git state=latest
+  tags: git
+
+- name: Overriding  gitconfig
+  copy:
+    src: gitconfig
+    dest: '~/.gitconfig'
+  become: no
+  tags: git

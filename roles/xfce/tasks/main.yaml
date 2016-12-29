@@ -1,9 +1,7 @@
 - name: Linking panel config
-  file:
+  copy:
     src: xfce4-panel.xml
-    dest: '/home/tino/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml'
-    state: link
-    force: yes
+    dest: '~/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml'
   become: no
   tags: xfce
 

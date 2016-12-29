@@ -1,0 +1,13 @@
+[user]
+    name = kusut
+    email = tinokusut@gmail.com
+
+[core]
+    editor = mg
+
+[github]
+    user = kusut
+
+[alias]
+  l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%ad) %C(bold blue)<%an>%Creset' --date=relative
+  co = checkout
