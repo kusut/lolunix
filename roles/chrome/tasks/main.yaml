@@ -1,0 +1,11 @@
+- name: Adding chrome key
+  apt_key: url=https://dl.google.com/linux/linux_signing_key.pub state=present
+  tags: chrome
+
+- name: Adding chrome repo
+  apt_repository: repo='deb http://dl.google.com/linux/chrome/deb/ stable main' state=present
+  tags: chrome
+
+- name: Installing chrome
+  apt: pkg=google-chrome-stable state=latest
+  tags: chrome
