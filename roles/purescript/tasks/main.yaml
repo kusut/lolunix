@@ -1,0 +1,6 @@
+- name: Install psvm
+  npm:
+    name: psvm
+    global: yes
+    state: latest
+  tags: purescript
