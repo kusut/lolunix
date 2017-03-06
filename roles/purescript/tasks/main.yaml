@@ -1,6 +1,10 @@
 - name: Install psvm
   npm:
-    name: psvm
+    name: "{{item}}"
     global: yes
     state: latest
+  with_items:
+    - psvm
+    - pulp
+    - bower
   tags: purescript
